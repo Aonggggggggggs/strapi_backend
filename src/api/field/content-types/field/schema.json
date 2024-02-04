@@ -12,9 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
-    },
     "img": {
       "type": "media",
       "multiple": false,
@@ -31,12 +28,6 @@
     },
     "price": {
       "type": "biginteger"
-    },
-    "address": {
-      "type": "text"
-    },
-    "phone": {
-      "type": "string"
     }
   }
 }

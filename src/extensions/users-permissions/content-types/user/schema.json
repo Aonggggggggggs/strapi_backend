@@ -65,7 +65,7 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "TEL": {
+    "tel": {
       "type": "string"
     }
   }
