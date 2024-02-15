@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rent_requests",
+  "info": {
+    "singularName": "rent-request",
+    "pluralName": "rent-requests",
+    "displayName": "Rent_request",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "start_rent_time": {
+      "type": "time"
+    },
+    "end_rent_time": {
+      "type": "time"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "rent_requests"
+    },
+    "field_detail": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::field.field",
+      "inversedBy": "rent_requests"
+    },
+    "rent_date": {
+      "type": "date"
+    },
+    "status_request": {
+      "type": "enumeration",
+      "enum": [
+        "progress",
+        "paying",
+        "done"
+      ]
+    }
+  }
+}

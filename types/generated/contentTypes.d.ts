@@ -377,6 +377,13 @@ export interface ApiFieldField extends Schema.CollectionType {
     img: Attribute.Media;
     type: Attribute.String;
     price: Attribute.BigInteger;
+    time_start: Attribute.Time;
+    time_end: Attribute.Time;
+    rent_requests: Attribute.Relation<
+      'api::field.field',
+      'oneToMany',
+      'api::rent-request.rent-request'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -388,6 +395,51 @@ export interface ApiFieldField extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::field.field',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRentRequestRentRequest extends Schema.CollectionType {
+  collectionName: 'rent_requests';
+  info: {
+    singularName: 'rent-request';
+    pluralName: 'rent-requests';
+    displayName: 'Rent_request';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    start_rent_time: Attribute.Time;
+    end_rent_time: Attribute.Time;
+    price: Attribute.Integer;
+    user: Attribute.Relation<
+      'api::rent-request.rent-request',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    field_detail: Attribute.Relation<
+      'api::rent-request.rent-request',
+      'manyToOne',
+      'api::field.field'
+    >;
+    rent_date: Attribute.Date;
+    status_request: Attribute.Enumeration<['progress', 'paying', 'done']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::rent-request.rent-request',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::rent-request.rent-request',
       'oneToOne',
       'admin::user'
     > &
@@ -740,6 +792,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.role'
     >;
     tel: Attribute.String;
+    rent_requests: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::rent-request.rent-request'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -812,6 +869,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::field.field': ApiFieldField;
+      'api::rent-request.rent-request': ApiRentRequestRentRequest;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;

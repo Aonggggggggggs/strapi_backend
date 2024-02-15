@@ -67,6 +67,12 @@
     },
     "tel": {
       "type": "string"
+    },
+    "rent_requests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rent-request.rent-request",
+      "mappedBy": "user"
     }
   }
 }
