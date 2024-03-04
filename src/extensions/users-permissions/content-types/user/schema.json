@@ -73,6 +73,13 @@
       "relation": "oneToMany",
       "target": "api::rent-request.rent-request",
       "mappedBy": "user"
+    },
+    "status_user": {
+      "type": "enumeration",
+      "enum": [
+        "player",
+        "admin"
+      ]
     }
   }
 }

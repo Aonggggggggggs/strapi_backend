@@ -29,12 +29,6 @@
     "price": {
       "type": "biginteger"
     },
-    "time_start": {
-      "type": "time"
-    },
-    "time_end": {
-      "type": "time"
-    },
     "rent_requests": {
       "type": "relation",
       "relation": "oneToMany",
