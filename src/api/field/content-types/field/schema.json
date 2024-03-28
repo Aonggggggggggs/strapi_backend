@@ -34,6 +34,13 @@
       "relation": "oneToMany",
       "target": "api::rent-request.rent-request",
       "mappedBy": "field_detail"
+    },
+    "field_status": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Close"
+      ]
     }
   }
 }

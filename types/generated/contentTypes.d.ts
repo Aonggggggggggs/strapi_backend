@@ -382,6 +382,7 @@ export interface ApiFieldField extends Schema.CollectionType {
       'oneToMany',
       'api::rent-request.rent-request'
     >;
+    field_status: Attribute.Enumeration<['Open', 'Close']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -426,7 +427,11 @@ export interface ApiRentRequestRentRequest extends Schema.CollectionType {
       'api::field.field'
     >;
     rent_date: Attribute.Date;
-    status_request: Attribute.Enumeration<['progress', 'paying', 'done']>;
+    status_request: Attribute.Enumeration<
+      ['Payed', 'Cancel', 'Done', 'Canceled']
+    >;
+    name: Attribute.String;
+    tel: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

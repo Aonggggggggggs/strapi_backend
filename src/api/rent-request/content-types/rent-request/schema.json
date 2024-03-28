@@ -39,10 +39,17 @@
     "status_request": {
       "type": "enumeration",
       "enum": [
-        "progress",
-        "paying",
-        "done"
+        "Payed",
+        "Cancel",
+        "Done",
+        "Canceled"
       ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "tel": {
+      "type": "string"
     }
   }
 }
