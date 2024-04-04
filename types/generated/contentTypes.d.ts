@@ -428,10 +428,12 @@ export interface ApiRentRequestRentRequest extends Schema.CollectionType {
     >;
     rent_date: Attribute.Date;
     status_request: Attribute.Enumeration<
-      ['Payed', 'Cancel', 'Done', 'Canceled']
+      ['Payed', 'In Progress', 'Canceling', 'Done', 'Cancel']
     >;
     name: Attribute.String;
     tel: Attribute.String;
+    date_range: Attribute.JSON;
+    type_request: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

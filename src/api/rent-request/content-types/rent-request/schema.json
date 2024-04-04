@@ -40,15 +40,22 @@
       "type": "enumeration",
       "enum": [
         "Payed",
-        "Cancel",
+        "In Progress",
+        "Canceling",
         "Done",
-        "Canceled"
+        "Cancel"
       ]
     },
     "name": {
       "type": "string"
     },
     "tel": {
+      "type": "string"
+    },
+    "date_range": {
+      "type": "json"
+    },
+    "type_request": {
       "type": "string"
     }
   }
