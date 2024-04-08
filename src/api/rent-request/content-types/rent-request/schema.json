@@ -41,6 +41,7 @@
       "enum": [
         "Payed",
         "In Progress",
+        "Unpaid",
         "Canceling",
         "Done",
         "Cancel"

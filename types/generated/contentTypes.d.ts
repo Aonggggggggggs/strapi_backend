@@ -428,7 +428,7 @@ export interface ApiRentRequestRentRequest extends Schema.CollectionType {
     >;
     rent_date: Attribute.Date;
     status_request: Attribute.Enumeration<
-      ['Payed', 'In Progress', 'Canceling', 'Done', 'Cancel']
+      ['Payed', 'In Progress', 'Unpaid', 'Canceling', 'Done', 'Cancel']
     >;
     name: Attribute.String;
     tel: Attribute.String;
