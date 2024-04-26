@@ -39,12 +39,13 @@
     "status_request": {
       "type": "enumeration",
       "enum": [
-        "Payed",
-        "In Progress",
-        "Unpaid",
-        "Canceling",
-        "Done",
-        "Cancel"
+        "P",
+        "I",
+        "U",
+        "CI",
+        "D",
+        "C",
+        "W"
       ]
     },
     "name": {

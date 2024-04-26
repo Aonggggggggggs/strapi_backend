@@ -80,6 +80,9 @@
         "player",
         "admin"
       ]
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

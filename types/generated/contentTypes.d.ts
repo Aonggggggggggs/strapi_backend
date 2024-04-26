@@ -427,9 +427,7 @@ export interface ApiRentRequestRentRequest extends Schema.CollectionType {
       'api::field.field'
     >;
     rent_date: Attribute.Date;
-    status_request: Attribute.Enumeration<
-      ['Payed', 'In Progress', 'Unpaid', 'Canceling', 'Done', 'Cancel']
-    >;
+    status_request: Attribute.Enumeration<['P', 'I', 'U', 'CI', 'D', 'C', 'W']>;
     name: Attribute.String;
     tel: Attribute.String;
     date_range: Attribute.JSON;
@@ -847,6 +845,7 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'api::rent-request.rent-request'
     >;
     status_user: Attribute.Enumeration<['player', 'admin']>;
+    name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
