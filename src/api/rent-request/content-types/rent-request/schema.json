@@ -59,6 +59,9 @@
     },
     "type_request": {
       "type": "string"
+    },
+    "rent_date_end": {
+      "type": "date"
     }
   }
 }

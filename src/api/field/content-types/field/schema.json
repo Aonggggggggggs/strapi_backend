@@ -41,6 +41,9 @@
         "Open",
         "Close"
       ]
+    },
+    "name": {
+      "type": "string"
     }
   }
 }

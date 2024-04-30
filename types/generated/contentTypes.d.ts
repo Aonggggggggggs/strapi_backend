@@ -383,6 +383,7 @@ export interface ApiFieldField extends Schema.CollectionType {
       'api::rent-request.rent-request'
     >;
     field_status: Attribute.Enumeration<['Open', 'Close']>;
+    name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -432,6 +433,7 @@ export interface ApiRentRequestRentRequest extends Schema.CollectionType {
     tel: Attribute.String;
     date_range: Attribute.JSON;
     type_request: Attribute.String;
+    rent_date_end: Attribute.Date;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
