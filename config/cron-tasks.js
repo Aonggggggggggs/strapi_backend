@@ -144,17 +144,15 @@ module.exports = {
         )
         .then((res) => {
           const requests = res.data.data;
-          console.log("requests", requests);
+          console.log("requests P ", requests);
           if (requests.length > 0) {
             requests.forEach(async (item) => {
               const body = {
                 data: {
                   status_request: "W",
+                  income_date: item?.attributes?.updatedAt?.split("T")[0],
                 },
               };
-              // console.log(
-              //   dayjs(item?.attributes?.rent_date).diff(dayjs(today), "day")
-              // );
               console.log(
                 "day diff :",
                 dayjs(item?.attributes?.rent_date).diff(dayjs(today), "day")
@@ -185,6 +183,7 @@ module.exports = {
                     console.log(res.data.data);
                   });
               }
+
             });
           }
         });

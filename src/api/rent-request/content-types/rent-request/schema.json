@@ -62,6 +62,9 @@
     },
     "rent_date_end": {
       "type": "date"
+    },
+    "income_date": {
+      "type": "date"
     }
   }
 }
