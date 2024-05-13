@@ -171,6 +171,19 @@ module.exports = {
                   });
               }
               if (
+                dayjs(item?.attributes?.rent_date).diff(dayjs(today), "day") ===
+                2
+              ) {
+                await axios
+                  .put(
+                    `http://localhost:1337/api/rent-requests/${item.id}`,
+                    body
+                  )
+                  .then((res) => {
+                    console.log(res.data.data);
+                  });
+              }
+              if (
                 dayjs(item?.attributes?.rent_date).format("YYYY-MM-DD") ===
                 today
               ) {
@@ -183,7 +196,6 @@ module.exports = {
                     console.log(res.data.data);
                   });
               }
-
             });
           }
         });

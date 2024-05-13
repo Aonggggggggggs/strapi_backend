@@ -435,6 +435,7 @@ export interface ApiRentRequestRentRequest extends Schema.CollectionType {
     type_request: Attribute.String;
     rent_date_end: Attribute.Date;
     income_date: Attribute.Date;
+    box_time: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

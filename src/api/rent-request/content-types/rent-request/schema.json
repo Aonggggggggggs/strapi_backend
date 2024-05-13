@@ -65,6 +65,9 @@
     },
     "income_date": {
       "type": "date"
+    },
+    "box_time": {
+      "type": "json"
     }
   }
 }
